@@ -167,7 +167,7 @@ namespace ChatAPI.Controllers
             {
                 var contactRequest = await r_UserService.SendContactRequestAsync(i_Request.RequesterId, i_Request.RequesterPassword, i_Request.RecipientId);
 
-                return Ok(new { Message = "Requst has sent", Requst = contactRequest });
+                return Ok(contactRequest);
             }
             catch (UserNotFoundException ex)
             {

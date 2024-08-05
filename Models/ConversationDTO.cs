@@ -13,7 +13,7 @@
         {
             if( other == null)
             {
-                return 1;
+                return 0;
             }
             return this.LastMessageTime.CompareTo(other.LastMessageTime);
         }

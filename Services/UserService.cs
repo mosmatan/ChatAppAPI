@@ -31,7 +31,9 @@ namespace ChatAPI.Services
         /// <exception cref="Exception">Thrown if the username already exists.</exception>
         public async Task<User> RegisterUserAsync(string i_Username, string i_Password, string i_FullName)
         {
+
             var existingUser = await r_UserRepository.GetUserDTOByUsernameAsync(i_Username);
+
             if (existingUser != null)
             {
                 throw new Exception("Username is already exist");

@@ -102,7 +102,7 @@ namespace ChatAPI.Repositories
         {
             if (!(await r_Context.Users.AnyAsync()))
             {
-                throw new UserNotFoundException();
+                return null;
             }
 
             UserDTO? userDTO = await r_Context.Users.AsNoTracking()

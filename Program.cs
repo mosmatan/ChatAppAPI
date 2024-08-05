@@ -2,6 +2,7 @@ using ChatAPI.Data;
 using ChatAPI.Repositories;
 using ChatAPI.Services;
 using Microsoft.EntityFrameworkCore;
+using ChatAPI.SampleDataScripts;
 
 public class Program
 {
@@ -39,23 +40,17 @@ public class Program
 
         app.MapControllers();
 
-        using (var scope = app.Services.CreateScope())
-        {
-            var dbContext = scope.ServiceProvider.GetRequiredService<ChatDbContext>();
-            dbContext.Database.Migrate();
-        }
+
+        Task.Run(RunSampleDataScript);
 
         app.Run();
+
+        
     }
 
     private static void addDatebaseService(WebApplicationBuilder builder)
     {
-        builder.Services.AddDbContext<ChatDbContext>(options => options.UseSqlServer(
-            "Data Source=localhost,1433;" +
-            "Initial Catalog=Chat;" +
-            "User id=asMosmatan;" +
-            "Password=1234!Secret;" +
-            "Encrypt=false;"));
+        builder.Services.AddDbContext<ChatDbContext>(options => options.UseInMemoryDatabase("InMemoryDB"));
     }
 
     private static void addCors(WebApplicationBuilder builder)
@@ -79,5 +74,11 @@ public class Program
         builder.Services.AddScoped<ConversationService>();
     }
 
+    private static async void RunSampleDataScript()
+    {
+        await Task.Delay(10000);
+        SampleDataScript dataScript = new SampleDataScript();
+        await dataScript.InitializeSampleData();
+    }
 
 }
