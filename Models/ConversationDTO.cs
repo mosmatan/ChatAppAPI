@@ -15,7 +15,7 @@
             {
                 return 1;
             }
-            return (int)this.LastMessageTime.Ticks - (int)other.LastMessageTime.Ticks;
+            return this.LastMessageTime.CompareTo(other.LastMessageTime);
         }
     }
 }

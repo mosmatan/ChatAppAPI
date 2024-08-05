@@ -130,13 +130,13 @@ namespace ChatAPI.Services
                 }
             }
 
-            if (i_ConversationsId == null)
+            if (i_ConversationsId.Any())
             {
-                conversations = await r_ConverstionRepository.GetAllConversationsWithIds(user.ConversationIds);
+                conversations = await r_ConverstionRepository.GetAllConversationsWithIds(i_ConversationsId);
             }
             else
             {
-                conversations = await r_ConverstionRepository.GetAllConversationsWithIds(i_ConversationsId);
+                conversations = await r_ConverstionRepository.GetAllConversationsWithIds(user.ConversationIds);
             }
 
             (conversations as List<ConversationDTO>).Sort();
