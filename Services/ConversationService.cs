@@ -42,7 +42,7 @@ namespace ChatAPI.Services
             {
                 throw new AuthenticateException("The sender is not in this conversation");
             }
-            else if (sender.PasswordHash != i_SenderPassword)
+            else if (!sender.VerifyPassword(i_SenderPassword))
             {
                 throw new AuthenticateException("Invalid Password");
             }

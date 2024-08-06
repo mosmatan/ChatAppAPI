@@ -20,15 +20,6 @@ namespace ChatAPI.Controllers
             r_ConversationService = i_MessageService;
         }
 
-        private string hashPassword(string i_Password)
-        {
-            using (var sha256 = SHA256.Create())
-            {
-                var hashPassword = BitConverter.ToString(sha256.ComputeHash(Encoding.UTF8.GetBytes(i_Password))).Replace("-", "").ToLower();
-                return hashPassword;
-            }
-        }
-
         [HttpGet("{i_Id}")]
         public async Task<IActionResult> GetConversationById(int i_Id, [FromQuery] int userId, [FromQuery] string password)
         {
@@ -50,13 +41,6 @@ namespace ChatAPI.Controllers
             {
                 return NotFound(ex.Message);
             }
-        }
-
-        [HttpPost("sendmessage/testing")]
-        public async Task<IActionResult> SendMessageTesting([FromBody] MessageRequest i_Message)
-        {
-            i_Message.SenderPassword = hashPassword(i_Message.SenderPassword);
-            return await SendMessage(i_Message);
         }
 
 
