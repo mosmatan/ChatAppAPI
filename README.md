@@ -1,6 +1,7 @@
 <h1>ChatAppAPI</h1>
 <h3>Overview</h3> 
 This project is an ASP.NET chat server with two branches: one using SQL for data storage and another using InMemory storage with hardcoded data to facilitate easy setup and testing. The chat server allows users to register, authenticate, and engage in conversations.
+<a href="https://github.com/mosmatan/ChatApp">Angular client side</a>
 
 <h3>Branches</h3> 
 <h5>SQL Branch</h5>
