@@ -36,7 +36,21 @@ This project is an ASP.NET chat server with two branches: one using SQL for data
 Ensure your SQL server is running and properly configured in appsettings.json before running tests.
 
 <h5>InMemory Branch</h5>
-Tests will use the hardcoded data, making it easy to verify the functionality without additional setup.
+Tests will use the hardcoded data, making it easy to verify the functionality without additional setup.<br>
+<strong>Hardcoded Users:</strong> The following users are prepopulated with a password of <strong>1234</strong>:
+<ul>
+  <li>Matan</li>
+  <li>Niv</li>
+  <li>Ziv</li>
+  <li>Daniel</li>
+  <li>Jonathan</li>
+  <li>Tamir</li>
+  <li>Gal</li>
+  <li>Yossi</li>
+  <li>Noy</li>
+  <li>Dana</li>
+</ul>
+
 
 <h3>Contact</h3>
 For any questions or issues, please contact <a href="mailto:mosmatan@gmail.com">mosmatan@gmail.com</a>.
