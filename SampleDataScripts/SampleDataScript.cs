@@ -10,8 +10,8 @@ namespace ChatAPI.SampleDataScripts
 
         private readonly HttpClient client = new HttpClient();
         User[] users = new User[10];
-        private readonly string[] usernames = { "Matan", "Niv", "Ziv", "Daniel", "Jonathan", "Tamir", "Gal", "Guy", "Noy", "Dana" };
-        private readonly string[] names = { "Matan M", "Niv N", "Ziv Z", "Daniel D", "Jonathan J", "Tamir T", "Gal G", "Guy G", "Noy N", "Dana D" };
+        private readonly string[] usernames = { "Matan", "Niv", "Ziv", "Daniel", "Jonathan", "Tamir", "Gal", "Yossi", "Noy", "Dana" };
+        private readonly string[] names = { "Matan M", "Niv N", "Ziv Z", "Daniel D", "Jonathan J", "Tamir T", "Gal G", "Yossi Y", "Noy N", "Dana D" };
 
         private readonly (int from, int to)[] connectionArr = { (0, 2), (0, 3), (0, 6), (1, 7), (1, 9), (2, 3), (2, 5), (2, 8), (3, 5), (3, 7), (3, 8), (4, 5), (4, 6) };
 
